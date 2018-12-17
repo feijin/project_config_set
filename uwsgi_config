@@ -1,0 +1,14 @@
+[uwsgi]
+chdir = /home/xiaoluo/happyread_server
+module=happyread.wsgi
+home=/home/xiaoluo/happyread_server/venv
+master=true
+processes=10
+socket=/home/xiaoluo/happyread_server/xjk.sock
+chmod-socket=666
+vacuum=true
+env = DJANGO_SETTINGS_MODULE=happyread.settings
+safe-pidfile = /tmp/xjk.pid
+harakiri=20
+max-requests=5000
+daemonize=/home/xiaoluo/happyread_server/log/xjk.log
